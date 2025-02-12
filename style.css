@@ -256,6 +256,23 @@
   }
 }
 @layer components {
+  .skip-to-main:not(:focus) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px; 
+  }
+  
+
+  .skip-to-main{
+    position: absolute;
+    background: var(--background-accent-main);
+    padding: 1rem;
+    border-radius: var(--border-radius-2);
+  }
   .site-header {
     padding-block: 1rem;
   }
@@ -276,7 +293,7 @@
     }
   }
 
-  [aria-controls="primary-nav"]{
+  [aria-controls="primary-nav"] {
     display: none;
   }
 
@@ -320,7 +337,7 @@
   }
 
   @media (width < 760px) {
-    [aria-controls="primary-nav"]{
+    [aria-controls="primary-nav"] {
       display: block;
     }
     [aria-expanded="True"] + .primary-navigation {
